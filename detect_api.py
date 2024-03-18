@@ -14,6 +14,10 @@ app = FastAPI()
 class ModelInput(BaseModel):
     lang: str
 
+@app.options("/detection")
+async def options_detection():
+    return {"message": "Allowed HTTP methods: POST, OPTIONS"}
+    
 @app.post('/detection')
 async def detection(input_parameters: ModelInput):
     try:
