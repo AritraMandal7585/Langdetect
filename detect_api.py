@@ -8,7 +8,7 @@ Created on Wed Feb 28 17:56:01 2024
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from langdetect import detect
-
+from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 app.add_middleware(
